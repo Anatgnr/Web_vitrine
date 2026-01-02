@@ -1,0 +1,33 @@
+---
+import Card from '../Items/Card.astro';
+---
+
+<section id="Display">
+    <div class="px-24 max-w-7xl mx-auto w-full max-sm:px-5 text-primary">
+        <div class="grid grid-cols-3 gap-6 max-sm:grid-cols-1">
+            <Card 
+            plan="Basic Plan" 
+            price={19} 
+            duration="month"
+            isStrikethrough={true} 
+            features1="5 team members"
+            features2="1 projects"
+            features3="Integration help"
+            />
+            <Card 
+            plan="Enterprise Plan" 
+            price={99} 
+            duration="month" 
+            features1="Unlimited users"
+            />
+            <Card 
+            plan="Pro Plan" 
+            price={49} 
+            duration="month"
+            isStrikethrough2={true} 
+            features1="10 users"
+            />
+            
+        </div>
+    </div>
+</section>

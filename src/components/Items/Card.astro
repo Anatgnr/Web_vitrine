@@ -1,0 +1,177 @@
+---
+import { boolean } from 'astro:schema';
+
+type Props = {
+    plan?: string;
+    price?: number;
+    isStrikethrough?: boolean;
+    isStrikethrough2?: boolean;
+    duration?: string;
+    features1?: string;
+    features2?: string;
+    features3?: string;
+    features4?: string;
+    features5?: string;
+    features6?: string;
+    features7?: string;
+
+};
+
+const { 
+    plan = "Pro Plan", 
+    price = 49, 
+    duration = "month",
+    isStrikethrough = false,
+    isStrikethrough2 = false, 
+    features1 = "Unlimited users",
+    features2 = "20GB Cloud storage",
+    features3 = "Integration help",
+    features4 = "Sketch Files",
+    features5 = "API Access",
+    features6 = "Complete documentation",
+    features7 = "Priority support"
+    } 
+    = Astro.props as Props;
+---
+
+
+
+
+<div class="w-full max-w-sm p-6 bg-neutral-primary-soft border border-default rounded-base shadow-xs">
+    <!-- Plan Details -->
+    <h5 class="mb-4 text-xl font-medium text-body">{plan}</h5>
+    <!-- Pricing -->
+    <div class="flex items-baseline text-heading">
+        <span class="text-5xl font-extrabold tracking-tight">${price}</span>
+        <span class="ms-2 font-medium text-body">/{duration}</span>
+    </div>
+    <ul role="list" class="space-y-4 my-6">
+        <!-- 1st item -->
+        <li class="flex items-center">
+            <svg 
+            class="w-5 h-5 shrink-0 text-fg-brand me-1.5" 
+            aria-hidden="true" 
+            width="24" height="24" 
+            fill="none" 
+            viewBox="0 0 24 24"
+            >
+            <path 
+                stroke="currentColor" 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+            </svg>
+            <span class="text-body">{features1}</span>
+        </li>
+        <!-- 2nd item -->
+        <li class="flex items-center">
+            <svg 
+                class="w-5 h-5 shrink-0 text-fg-brand me-1.5" 
+                aria-hidden="true" 
+                width="24" height="24" fill="none" viewBox="0 0 24 24"
+            >
+                <path 
+                    stroke="currentColor" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    stroke-width="2" 
+                    d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+            </svg>
+            <span class="text-body">{features2}</span>
+        </li>
+        <!-- 3rd item -->
+        <li class="flex items-center">
+            <svg 
+            class="w-5 h-5 shrink-0 text-fg-brand me-1.5" 
+            aria-hidden="true" 
+            width="24" height="24" fill="none" viewBox="0 0 24 24"
+            >
+            <path 
+                stroke="currentColor" 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+            </svg>
+            <span class="text-body">{features3}</span>
+        </li>
+        <!-- 4th item -->
+        <li class="flex items-center decoration-body">
+            <svg 
+            class="w-5 h-5 shrink-0 text-fg-brand me-1.5" 
+            aria-hidden="true" 
+            width="24" height="24" fill="none" viewBox="0 0 24 24"
+            >
+            <path 
+                stroke="currentColor" 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+            </svg>
+            <span class={"text-body " + (isStrikethrough ? 'line-through' : '')}>{features4}</span>
+        </li>
+        <!-- 5th item -->
+        <li class="flex items-center decoration-body">
+            <svg 
+            class="w-5 h-5 shrink-0 text-fg-brand me-1.5" 
+            aria-hidden="true" 
+            width="24" height="24" fill="none" viewBox="0 0 24 24"
+            >
+            <path 
+                stroke="currentColor" 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+            </svg>
+            <span class={"text-body " + (isStrikethrough ? 'line-through' : '')}>{features5}</span>
+        </li>
+        <!-- 6th item -->
+        <li class={"flex items-center decoration-body " + (isStrikethrough ? 'line-through' : '')}>
+            <svg 
+                class="w-5 h-5 shrink-0 text-fg-brand me-1.5" 
+                aria-hidden="true" 
+                width="24" height="24" fill="none" viewBox="0 0 24 24"
+            >
+                <path 
+                    stroke="currentColor" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    stroke-width="2" 
+                    d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+            </svg>
+            <span 
+            class={"text-body " + (isStrikethrough ? 'line-through' : '') + (isStrikethrough2 ? ' line-through' : '')}>
+            {features6}
+            </span>
+        </li>
+        <!-- 7th item -->
+        <li class="flex items-center decoration-body">
+            <svg 
+                class="w-5 h-5 shrink-0 text-fg-brand me-1.5" 
+                aria-hidden="true" 
+                width="24" height="24" fill="none" viewBox="0 0 24 24"
+            >
+                <path 
+                stroke="currentColor" 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+            </svg>
+            <span class={"text-body " + (isStrikethrough ? 'line-through' : '') + (isStrikethrough2 ? ' line-through' : '')}>
+                {features7}
+            </span>
+        </li>
+    </ul>
+    <button type="button" class="w-full text-white bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">Choose plan</button>
+</div>
