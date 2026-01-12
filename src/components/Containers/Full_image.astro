@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+    imageSrc: ImageMetadata;
+    altText?: string;
+    offset?: string;
+}
+const { imageSrc, altText = "", offset = "0px" } = Astro.props as Props;
+---
+
+<div class= "image-container">
+    <Image 
+    src={imageSrc} 
+    alt={altText} 
+    loading="eager"
+    decoding="async"
+    priority
+    format="png"
+    sizes="100vw"
+    class="hero-img"
+    />
+</div>
